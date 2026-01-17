@@ -17,3 +17,13 @@ class TestGoogleMapAPI:
         print("Get location (GET)")
         get_response : Response = api.get_location(post_response.json().get('place_id'))
         compare_values("GET status-code", get_response.status_code, 200)
+
+    def test_update_location(self, default_body, make_body_for_update_location):
+        print("Create location (POST)")
+        post_response: Response = api.create_location(default_body)
+        compare_values("POST status-code", post_response.status_code, 200)
+
+        print("Update location (PUT)")
+        body = make_body_for_update_location(post_response.json().get('place_id'))
+        put_response: Response = api.update_location(body)
+        compare_values("PUT status-code", put_response.status_code, 200)
