@@ -10,6 +10,6 @@ class GoogleMapEndPoints:
     url_of_edit_location : str = \
         f"{base_url}/maps/api/place/update/json{key_param}"
     url_of_get_location : str = \
-        f"{base_url}/maps/api/place/get/json{key_param}"
+        f"{base_url}/maps/api/place/get/json{key_param}&place_id="
     url_of_delete_location : str = \
         f"{base_url}/maps/api/place/delete/json{key_param}"
