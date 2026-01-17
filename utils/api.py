@@ -18,3 +18,11 @@ class GoogleMapAPI:
         response = CustomRequests.get(url)
         print(response.text)
         return response
+
+    @staticmethod
+    def update_location(body):
+        url = end_points.url_of_edit_location
+        print(url)
+        response = CustomRequests.put(url, body)
+        print(response.text)
+        return response
