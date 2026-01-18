@@ -1,40 +1,38 @@
-import requests
+from requests import Session
 
 
 class CustomRequests:
-    headers = {"Content-type": "application/json"}
-    cookie = {}
+    def __init__(self, session):
+        self.session : Session = session
+        self.headers = {"Content-type": "application/json"}
+        self.cookie = {}
 
-    @staticmethod
-    def get(url):
-        return requests.get(
+    def get(self, url):
+        return self.session.get(
             url,
-            headers=CustomRequests.headers,
-            cookies=CustomRequests.cookie
+            headers=self.headers,
+            cookies=self.cookie
         )
 
-    @staticmethod
-    def post(url, body):
-        return requests.post(
+    def post(self, url, body):
+        return self.session.post(
             url, json=body,
-            headers=CustomRequests.headers,
-            cookies=CustomRequests.cookie
+            headers=self.headers,
+            cookies=self.cookie
         )
 
-    @staticmethod
-    def put(url, body):
-        return requests.put(
+    def put(self, url, body):
+        return self.session.put(
             url,
             json=body,
-            headers=CustomRequests.headers,
-            cookies=CustomRequests.cookie
+            headers=self.headers,
+            cookies=self.cookie
         )
 
-    @staticmethod
-    def delete(url, body):
-        return requests.delete(
+    def delete(self, url, body):
+        return self.session.delete(
             url,
             json=body,
-            headers=CustomRequests.headers,
-            cookies=CustomRequests.cookie
+            headers=self.headers,
+            cookies=self.cookie
         )
