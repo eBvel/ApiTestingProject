@@ -37,3 +37,37 @@ def make_body_for_delete_location():
     def _body_for_delete_location(place_id):
         return {"place_id": place_id}
     return _body_for_delete_location
+
+
+@pytest.fixture
+def expected_positive_post_token():
+    return ["status", "place_id", "scope", "reference", "id"]
+
+
+@pytest.fixture
+def expected_positive_get_token():
+    return [
+        "location",
+        "accuracy",
+        "name",
+        "phone_number",
+        "address",
+        "types",
+        "website",
+        "language"
+    ]
+
+
+@pytest.fixture
+def expected_positive_put_token():
+    return ["msg"]
+
+
+@pytest.fixture
+def expected_positive_delete_token():
+    return ["status"]
+
+
+@pytest.fixture
+def expected_negative_get_token():
+    return ["msg"]
