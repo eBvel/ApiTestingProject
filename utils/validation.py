@@ -15,3 +15,9 @@ class ValueValidation:
         response_token = json.loads(response.text)
         assert list(response_token) == expected_token
         print(f"PASSED: Token is correct! All fields are included.")
+
+    @staticmethod
+    def search_word_in_text(value_name, text, word):
+        print(f"\n{value_name}\ntext: {text}\nword: {word}")
+        assert word in text, f"The text doesn't contains the word - '{word}'!"
+        print(f"PASSED: The word '{word}' is present in the text!")
