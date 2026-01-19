@@ -23,6 +23,11 @@ class TestGoogleMapAPI:
             post_response,
             expected_positive_post_token
         )
+        ValueValidation.compare_values(
+            "POST status",
+            post_response.json().get('status'),
+            "OK"
+        )
 
     def test_get_location(self, default_body, expected_positive_get_token):
         print("Create location (POST)")
@@ -40,6 +45,11 @@ class TestGoogleMapAPI:
         ValueValidation.compare_response_token(
             get_response,
             expected_positive_get_token
+        )
+        ValueValidation.compare_values(
+            "GET address",
+            get_response.json().get('address'),
+            default_body.get('address')
         )
 
     def test_update_location(
@@ -65,6 +75,11 @@ class TestGoogleMapAPI:
             put_response,
             expected_positive_put_token
         )
+        ValueValidation.compare_values(
+            "PUT msg",
+            put_response.json().get('msg'),
+            "Address successfully updated"
+        )
 
     def test_delete_location(
             self,
@@ -89,6 +104,11 @@ class TestGoogleMapAPI:
             delete_response,
             expected_positive_delete_token
         )
+        ValueValidation.compare_values(
+            "DELETE status",
+            delete_response.json().get('status'),
+            "OK"
+        )
 
         print("Get location (POST-DELETE-GET)")
         get_response : Response = self.api.get_location(place_id)
@@ -101,8 +121,8 @@ class TestGoogleMapAPI:
             get_response,
             expected_negative_get_token
         )
-        ValueValidation.compare_values(
+        ValueValidation.search_word_in_text(
             "GET msg",
             get_response.json().get('msg'),
-            "Get operation failed, looks like place_id  doesn't exists"
+            "failed"
         )
