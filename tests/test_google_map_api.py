@@ -7,7 +7,11 @@ from utils.validation import ValueValidation
 
 @pytest.mark.usefixtures("session_connection")
 class TestGoogleMapAPI:
-    def test_create_location(self, default_body, expected_positive_post_token):
+    def test_create_location(
+            self,
+            default_body,
+            expected_positive_post_token
+    ):
         print("Create location (POST)")
         post_response : Response = self.api.create_location(default_body)
         ValueValidation.compare_values(
@@ -57,7 +61,10 @@ class TestGoogleMapAPI:
             put_response.status_code,
             200
         )
-        ValueValidation.compare_response_token(put_response, expected_positive_put_token)
+        ValueValidation.compare_response_token(
+            put_response,
+            expected_positive_put_token
+        )
 
     def test_delete_location(
             self,
