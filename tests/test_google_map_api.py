@@ -1,11 +1,13 @@
 import pytest
 from requests import Response
+
+from tests.conftest import expected_positive_get_token
 from utils.validation import ValueValidation
 
 
 @pytest.mark.usefixtures("session_connection")
 class TestGoogleMapAPI:
-    def test_create_location(self, default_body):
+    def test_create_location(self, default_body, expected_positive_post_token):
         print("Create location (POST)")
         post_response : Response = self.api.create_location(default_body)
         ValueValidation.compare_values(
@@ -13,8 +15,12 @@ class TestGoogleMapAPI:
             post_response.status_code,
             200
         )
+        ValueValidation.compare_response_token(
+            post_response,
+            expected_positive_post_token
+        )
 
-    def test_get_location(self, default_body):
+    def test_get_location(self, default_body, expected_positive_get_token):
         print("Create location (POST)")
         post_response: Response = self.api.create_location(default_body)
 
@@ -27,11 +33,16 @@ class TestGoogleMapAPI:
             get_response.status_code,
             200
         )
+        ValueValidation.compare_response_token(
+            get_response,
+            expected_positive_get_token
+        )
 
     def test_update_location(
             self,
             default_body,
-            make_body_for_update_location
+            make_body_for_update_location,
+            expected_positive_put_token
     ):
         print("Create location (POST)")
         post_response: Response = self.api.create_location(default_body)
@@ -46,11 +57,14 @@ class TestGoogleMapAPI:
             put_response.status_code,
             200
         )
+        ValueValidation.compare_response_token(put_response, expected_positive_put_token)
 
     def test_delete_location(
             self,
             default_body,
-            make_body_for_delete_location
+            make_body_for_delete_location,
+            expected_positive_delete_token,
+            expected_negative_get_token
     ):
         print("Create location (POST)")
         post_response: Response = self.api.create_location(default_body)
@@ -64,6 +78,10 @@ class TestGoogleMapAPI:
             delete_response.status_code,
             200
         )
+        ValueValidation.compare_response_token(
+            delete_response,
+            expected_positive_delete_token
+        )
 
         print("Get location (POST-DELETE-GET)")
         get_response : Response = self.api.get_location(place_id)
@@ -71,6 +89,10 @@ class TestGoogleMapAPI:
             "GET status-code",
             get_response.status_code,
             404
+        )
+        ValueValidation.compare_response_token(
+            get_response,
+            expected_negative_get_token
         )
         ValueValidation.compare_values(
             "GET msg",
