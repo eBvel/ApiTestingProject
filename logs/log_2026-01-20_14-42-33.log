@@ -1,0 +1,96 @@
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_create_location (call)
+Time: 2026-01-20 14:42:33.232180
+Request method: POST
+Request URL: https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+
+Response code: 200
+Response text: {"status":"OK","place_id":"0ec25839e5a4ee29373e2ec548d0182e","scope":"APP","reference":"0ea4bed2a6746b39e6c9f6fd3e00c4320ea4bed2a6746b39e6c9f6fd3e00c432","id":"0ea4bed2a6746b39e6c9f6fd3e00c432"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:42:35 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '194', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_get_location (call)
+Time: 2026-01-20 14:42:33.939135
+Request method: POST
+Request URL: https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+
+Response code: 200
+Response text: {"status":"OK","place_id":"37e3196d5cb176456ec09f07b50b9fc0","scope":"APP","reference":"ff2604f8363ecd546898f30f27f2b20eff2604f8363ecd546898f30f27f2b20e","id":"ff2604f8363ecd546898f30f27f2b20e"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:42:35 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '194', 'Keep-Alive': 'timeout=5, max=99', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_get_location (call)
+Time: 2026-01-20 14:42:34.165933
+Request method: GET
+Request URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=37e3196d5cb176456ec09f07b50b9fc0
+
+Response code: 200
+Response text: {"location":{"latitude":"-38.383494","longitude":"33.427362"},"accuracy":"50","name":"Frontline house","phone_number":"(+91) 983 893 3937","address":"29, side layout, cohen 09","types":"shoe park,shop","website":"http:\/\/google.com","language":"French-IN"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:42:35 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '257', 'Keep-Alive': 'timeout=5, max=98', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_update_location (call)
+Time: 2026-01-20 14:42:35.999844
+Request method: POST
+Request URL: https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+
+Response code: 200
+Response text: {"status":"OK","place_id":"ae01787f3abc24aaceaba7c5b5984b95","scope":"APP","reference":"4edef389a9f0ebfaf80410faad2138bb4edef389a9f0ebfaf80410faad2138bb","id":"4edef389a9f0ebfaf80410faad2138bb"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:42:37 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '194', 'Keep-Alive': 'timeout=5, max=97', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_update_location (call)
+Time: 2026-01-20 14:42:36.224418
+Request method: PUT
+Request URL: https://rahulshettyacademy.com/maps/api/place/update/json?key=qaclick123
+
+Response code: 200
+Response text: {"msg":"Address successfully updated"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:42:37 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '38', 'Keep-Alive': 'timeout=5, max=96', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_delete_location (call)
+Time: 2026-01-20 14:42:36.819438
+Request method: POST
+Request URL: https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+
+Response code: 200
+Response text: {"status":"OK","place_id":"6f66f4e4e4f95d9dbc6289fda8773d21","scope":"APP","reference":"7acc341e13c35358d7dc328f01989f4d7acc341e13c35358d7dc328f01989f4d","id":"7acc341e13c35358d7dc328f01989f4d"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:44:01 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '194', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_delete_location (call)
+Time: 2026-01-20 14:42:37.681530
+Request method: DELETE
+Request URL: https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
+
+Response code: 200
+Response text: {"status":"OK"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:44:01 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '15', 'Keep-Alive': 'timeout=5, max=99', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
+
+<--------------------
+Test: test_google_map_api.py::TestGoogleMapAPI::test_delete_location (call)
+Time: 2026-01-20 14:42:41.089821
+Request method: GET
+Request URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=6f66f4e4e4f95d9dbc6289fda8773d21
+
+Response code: 404
+Response text: {"msg":"Get operation failed, looks like place_id  doesn't exists"}
+Response headers: {'Date': 'Tue, 20 Jan 2026 07:44:04 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '67', 'Keep-Alive': 'timeout=5, max=98', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'}
+Response cookie: {}
+-------------------->
