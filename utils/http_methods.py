@@ -1,14 +1,6 @@
 from requests import Session
-from utils.logger import Logger
+from utils.logger import logger_decorator
 
-
-def logger_decorator(func):
-    def wrapped(*args, **kwargs):
-        Logger.add_request(args[1], request_method=str(func.__name__).upper())
-        result = func(*args, **kwargs)
-        Logger.add_response(result)
-        return result
-    return wrapped
 
 class CustomRequests:
     def __init__(self, session):
