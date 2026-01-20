@@ -12,8 +12,9 @@ class ValueValidation:
 
     @staticmethod
     def compare_response_token(response: Response, expected_token):
-        response_token = json.loads(response.text)
-        assert list(response_token) == expected_token
+        response_token = list(json.loads(response.text))
+        assert response_token == expected_token, (f"Incorrect token "
+                                                  f"'{response_token}'")
         print(f"PASSED: Token is correct! All fields are included.")
 
     @staticmethod
