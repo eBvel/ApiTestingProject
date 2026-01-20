@@ -3,6 +3,15 @@ from requests import Response
 from os import environ, path
 
 
+def logger_decorator(func):
+    def wrapped(*args, **kwargs):
+        Logger.add_request(args[1], request_method=str(func.__name__).upper())
+        result = func(*args, **kwargs)
+        Logger.add_response(result)
+        return result
+    return wrapped
+
+
 class Logger:
     file_name = f"../logs/log_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
 
